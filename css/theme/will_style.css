@@ -1,0 +1,316 @@
+/**
+ * A simple theme for reveal.js presentations, derived from serif.css 
+ * It's in the spirit of the Metropolis theme for beamer https://github.com/matze/mtheme
+ *
+ * This theme is Copyright (C) 2016 Vince Hodges, http://sourdoughlabs.com - it is MIT licensed.
+ * Modified by Tyson Van Alfen
+ */
+
+
+/*********************************************
+ * DEFINE CUSTOM FRAGMENTS
+ *********************************************/
+
+.reveal .slides section .fragment.semi-fade-in {
+	opacity: 0.3;
+	visibility: inherit;
+}
+.reveal .slides section .fragment.semi-fade-in.visible {
+	opacity: 1;
+	visibility: inherit;
+}
+
+
+/*********************************************
+ * SET UP MY COLORS
+ *********************************************/
+:root {
+    --my-off-white: #fafafa;
+    --my-highligh-yellow: #fdfd96;
+    --my-light-grey: #A7AAB1;
+    --my-dark-greyblue: #232b3b;
+    --my-light-blue: #9999FF;
+    --my-medium-blue: #0000FF;
+    --my-dark-blue: #000082;
+}
+
+
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+body {
+    background: var(--my-off-white);
+    background-color: var(--my-off-white);
+}
+
+.reveal {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 30px;
+    font-weight: normal;
+    color: var(--my-dark-greyblue);
+}
+
+::selection {
+    color: var(--my-off-white);
+    background: var(--my-light-blue);
+    text-shadow: none;
+}
+
+.reveal .slides {
+    text-align:left;
+}
+
+.reveal .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+.reveal h1 {
+    color: var(--my-dark-blue);
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: var(--my-light-grey);
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.reveal h1.title {
+    text-align: left;
+    color: var(--my-off-white);
+    background-color: var(--my-dark-blue);
+}
+
+.reveal h2 {
+    font-size: 1.30em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.reveal h2.title {
+    margin-left: 25px;
+}
+
+.reveal h3 {
+    font-weight: bold;
+    text-decoration: underline;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.reveal h3.title {
+    font-style: italic;
+    font-weight: normal;
+    text-decoration: none;
+    margin-left: 25px;
+}
+
+.reveal h4 {
+    font-size: .75em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+
+/*********************************************
+ * CUSTOM BUTTON
+ *********************************************/
+.reveal .mybutton {
+    display: inline-block;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    font-size: .5em;
+    font-weight: bold;
+    outline: none;
+    color: var(--my-dark-blue);
+    background-color: var(--my-off-white);
+    border: 2px solid var(--my-dark-blue);
+    border-radius: 0.3em;
+    box-shadow: 0 3px var(--my-light-blue);
+}
+
+.reveal .mybutton:hover {
+    background-color: var(--my-light-grey);
+}
+
+.reveal .mybutton:active {
+  box-shadow: 0 0px var(--my-medium-blue);
+  transform: translateY(4px);
+}
+
+
+/*********************************************
+ * OTHER
+ *********************************************/
+.reveal p {
+    margin-top: 25px;
+    line-height: 1.3;
+}
+
+/* Ensure certain elements are never larger than the slide itself */
+.reveal img,
+.reveal video,
+.reveal iframe {
+    max-width: 95%;
+    max-height: 95%; }
+
+.reveal mark {
+    background-color: var(--my-highligh-yellow);
+    border-radius: 0.3em;
+    padding-left: 0.1em;
+    padding-right: 0.1em;
+}
+
+.reveal strong,
+.reveal b {
+    font-weight: bold; }
+
+.reveal em {
+    font-style: italic; }
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+    display: inline-block;
+    margin-left: 1em;
+}
+
+.reveal ol {
+    list-style-type: decimal;
+}
+
+.reveal ul {
+    list-style-type: disc;
+}
+
+.reveal ul ul {
+    list-style-type: square;
+}
+
+.reveal ul ul ul {
+    list-style-type: circle;
+}
+
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+    display: block;
+    margin-left: 2em; }
+
+.reveal li {
+    line-height: 1.5;
+    margin-left: 1em;
+}
+
+.reveal table {
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    border-spacing: 0; }
+
+.reveal table th {
+    font-weight: bold;
+    text-align: center;
+    padding: 0.2em 0.5em 0.2em 0.5em;
+    border-bottom: 3px solid;
+}
+
+.reveal table td {
+    text-align: center;
+    padding: 0.2em 0.5em 0.2em 0.5em;
+    border-bottom: 1px solid;
+}
+
+.reveal table td:first-child,
+.reveal table th:first-child {
+    text-align: left;
+}​
+
+
+/*********************************************
+ * LINKS
+ *********************************************/
+.reveal a, a:link, a:visited {
+    color: var(--my-medium-blue);
+}
+
+.reveal h2 a, h2 a:link, h2 a:visited {
+    color: var(--my-dark-greyblue);
+    text-decoration: none;
+}
+
+
+/*********************************************
+ * IMAGES
+ *********************************************/
+.reveal section img {
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.reveal section img.plain {
+    border: 0;
+    box-shadow: none;
+}
+
+.reveal a img {
+    -webkit-transition: all 0.15s linear;
+    -moz-transition: all 0.15s linear;
+    transition: all 0.15s linear; }
+
+.reveal a:hover img {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
+
+
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+.reveal .progress {
+/*    background: #A7AAB1;*/
+    background: var(--my-light-grey);
+}
+
+.reveal .progress span {
+    background: var(--my-dark-blue);
+    -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+    -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+    transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+}
+
+
+/*********************************************
+ * NAVIGATE BUTTONS
+ *********************************************/
+.reveal .controls button {
+    color: var(--my-medium-blue);
+}
+
+
+/*********************************************
+ * SPREADSHEET STYLING
+ *********************************************/
+.spreadsheet td, .spreadsheet input {
+    color: var(--my-dark-greyblue);
+}
+
+.spreadsheet tr:first-child td, .spreadsheet td:first-child {
+    color: var(--my-off-white);
+    background-color: var(--my-dark-blue);
+    font-weight: normal;
+}
+
+.spreadsheet td.formula:not(:hover)  {
+    background-color: var(--my-light-grey);
+    background-color: lightyellow;
+}
