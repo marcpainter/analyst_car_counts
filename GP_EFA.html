@@ -1,0 +1,2828 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+      <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
+
+
+	<title>The Value of Differing Points of View:  Evidence from Financial Analysts' Geographic Diversity</title>
+
+	<meta name="description" content="The Value of Differing Points of View:  Evidence from Financial Analysts' Geographic Diversity">
+	<meta name="author" content="Marcus Painter">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<link rel="stylesheet" href="./css/reveal.css">
+	<link rel="stylesheet" href="./css/theme/will_style.css" id="theme">
+
+	<!-- Use custom favicon -->
+	<!-- <link rel="icon" href="../../favicon.ico" type="image/x-icon"> -->
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+
+	<!-- Put these scripts in the head -->
+	<!-- See: https://stackoverflow.com/questions/3531314/should-i-write-script-in-the-body-or-the-head-of-the-html -->
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.css' rel='stylesheet' />
+
+
+   <style>
+      body {  height: 100%;
+        width:100%;
+        margin: 0;
+        padding: 0; }
+ <!--  #map { position:absolute; top:120px; bottom:0; left:50px; width:300%;}
+       #map {
+           height: 100%;
+           width:100%;
+      }-->
+
+.container{
+    display: flex;
+}
+.col{
+    flex: 1;
+}
+
+
+.column {
+  float: left;
+}
+
+
+
+.cleft {
+  width: 20%;
+}
+
+.cright {
+  width: 80%;
+}
+
+
+
+.map-overlay {
+position: absolute;
+width: 25%;
+top: 0;
+bottom: 0;
+left: 0;
+font: 8px/12px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+background-color: #fff;
+max-height: 80%;
+overflow: hidden;
+}
+
+.map-overlay fieldset {
+display: none;
+background: #ddd;
+border: none;
+padding: 10px;
+margin: 0;
+}
+
+.map-overlay input {
+display: block;
+border: none;
+width: 100%;
+border-radius: 3px;
+padding: 10px;
+margin: 0;
+}
+
+.map-overlay .listing {
+overflow: auto;
+max-height: 100%;
+}
+
+.map-overlay .listing > * {
+display: block;
+padding: 5px 10px;
+margin: 0;
+}
+
+.map-overlay .listing a {
+border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+color: #404;
+text-decoration: none;
+}
+
+.map-overlay .listing a:last-child {
+border: none;
+}
+
+.map-overlay .listing a:hover {
+background: #f0f0f0;
+}
+    </style>
+
+<script>
+	var link = document.createElement( 'link' );
+	link.rel = 'stylesheet';
+	link.type = 'text/css';
+	link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+	document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+</head>
+
+<!--<body>-->
+
+
+<body style="transition: -webkit-transform 0.8s ease 0s;" class="">
+<!--<div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;">
+<!--<div class="reveal"><div class="slides">-->
+<div class="reveal slide center has-horizontal-slides ready" role="application" data-transition-speed="default" data-background-transition="fade" data-navigation-mode="linear" style="cursor: none;">
+
+<div class="slides" style="width: 960px; height: 700px; left: 50%; top: 50%; bottom: auto; right: auto; transform: translate(-50%, -50%) scale(0.968229);">
+
+
+
+<!-- Title Slide -->
+	<section data-menu-title="Title Slide" class="present" style="top: 171px; display: block;">
+		<div style="display: flex; justify-content: center; flex-direction: column;">
+			<div>
+				<h1 class="title" style="text-align: center; font-size: 120%;">
+					The Value of Differing Points of View:  Evidence from Financial Analysts' Geographic Diversity
+				</h1>
+			</div>
+			<div style="display: flex; justify-content: center;">
+				<div>
+					<p style="margin-left: 50px; margin-right: 50px; line-height: 1em; text-align: center;">
+						Will Gerken<br>
+						<span style="font-size: 0.65em;">University of Kentucky</span>
+					</p>
+				</div>
+				<div>
+					<p style="margin-left: 0px; margin-right: 0px; line-height: 1em; text-align: center;">
+						Marc Painter<br>
+						<span style="font-size: 0.65em;">Saint Louis University</span>
+					</p>
+				</div>
+			</div>
+			<div style="margin-top: 20px;">
+				<p style="text-align: center;">
+					August 20, 2020
+				</p>
+				<p style="text-align: center;">
+					European Finance Association
+				</p>
+			</div>
+			<div style="margin-top: 20px;">
+				<p style="text-align: center;">
+					(Former title: Are Crowded Crowds Still Wise? Evidence from Financial Analysts' Geographic Diversity)
+				</p>
+			</div>
+		</div>
+	</section>
+
+
+	<section  data-menu-title="Informative Value of Diverse Information" hidden="" aria-hidden="true" class="future" style="top: 86px; display: block;">
+	<h1> Informative Value of Diverse Information </h1>
+	<p> To function well, markets require participants to uncover and incorporate diverse information </p>
+	   <p> For financial markets, a lot of info is disseminated widely </p>
+	   <ul >
+
+			<li> Annual reports </li>
+			<li> Earnings calls  </li>
+		</ul>
+	<p class="fragment" data-fragment-index="1"> Other important firm information is geographically concentrated and not equally accessible </p>
+	<p class="fragment" data-fragment-index="2" style="font-weight: bold;"> Can market participants identify important local signals and avoid local noise?  </p>
+
+	</section>
+
+<section>
+
+	<h1>Analysts and local information</h1>
+	<div class="container">
+
+		<div class="col">
+						<ul style="font-size: 80%;">
+							<li> Local information is valuable to markets (Van	Nieuwerburgh and Veldkamp, 2009)</li>
+								<ul>
+									<li  > Analysts (especially in retail) often highlight store visits as part of their primary research  </li>
+								</ul>
+						</ul>
+			<div style="display: flex; justify-content: center;"  >
+				<img src="img/lynch.png" style="height:280px;">
+
+			</div>
+			
+		</div>
+
+		<div class="col">
+			<ul style="font-size: 80%;"> 
+			<li class="fragment" data-fragment-index="1"> Individuals often generalize from small amounts of personally observed data (Tversky and Kahneman, 1971)  </li>
+				<ul>
+				<li class="fragment" data-fragment-index="1"> Sell-side analysts are geographically concentrated </li>
+				</ul>
+			</ul>
+		  <div class="image-float">
+					<img class="fragment" data-fragment-index="1" src="img/analysts.png" style="height:275px;">
+			</div>
+
+
+		</div>
+
+		</div>
+</section>
+<!--
+<section>
+	<h1>Analysts and local information</h1>
+			<ul>
+			<li> Analysts may find it valuable to incorporate locally observed information (Van
+	Nieuwerburgh and Veldkamp, 2009)</li>
+			<ul>
+			<li  > Analysts (especially in retail) often highlight store visits as part of their primary research  </li>
+			</ul>
+			</ul>
+
+	<div style="display: flex; justify-content: center;"  >
+				<img src="img/lynch.png" style="height:280px;">
+
+			</div>
+		<ul>
+			<li> Individuals often generalize from small amounts of personally observed data (Tversky and Kahneman, 1971)  </li>
+		</ul>
+</section>
+-->
+<!--
+<section>
+<h1>Sell-side analysts are geographically concentrated</h1>
+
+
+<div style="display: flex; justify-content: center;">
+			<img src="img/analysts.png" style="height:300px;">
+			</div>
+			<ul>
+			<li > Analysts and stores in our retail firm sample  </li>
+
+			</ul>
+
+		<p> Over half of research analysts work on or near Wall Street </p>
+
+
+</section>
+-->
+
+
+<section>
+		<h1>Research questions</h1>
+
+
+		<ul>
+						<li>  Do financial analysts of retail firms incorporate local information into their forecasts? </li>
+	<ul>
+			<li class="fragment" data-fragment-index="1"><font color="gray"> Retail analysts shade earnings forecasts toward their locally observed parking lot car counts </font></li>
+
+	</ul>
+						<li> What is the implication of analysts' geographic diversity for the market?</li>
+
+			<ul>
+				<li class="fragment" data-fragment-index="1"><font color="gray"> Consensus forecast errors are larger and firm liquidity is lower when analysts are more geographically concentrated </font> </li>
+
+	</ul>
+		</ul>
+
+
+			</section>
+
+<!--
+	<section>
+		<h1 >Empirical challenge </h1>
+		How to identify and observe geographically diverse local information?
+		<li class="fragment" data-fragment-index="1"> Most of the existing empirical literature examines behavior in gambling or laboratory settings  </li>
+		<li class="fragment" data-fragment-index="1"> Identifing whether individuals incorporate local information outside the lab is typically difficult </li>
+		<li class="fragment" data-fragment-index="2">Hard to observe local information that is not easily available to other participants</li>
+	
+		<p class="fragment" data-fragment-index="3">For nationwide retail firms,  local firm performance may vary across stores for  <u>same</u> firm at  <u>same</u> point in time </p>
+
+
+	</section>
+-->
+
+
+<section>
+<h1>Empirical challenge</h1>
+<style>
+.container{
+    display: flex;
+}
+.col{
+    flex: 1;
+}
+</style>
+
+<div class="container">
+
+<div class="col">
+	How to identify and observe geographically diverse local information?
+<p class="fragment" data-fragment-index="1"> Solution - Orbital Insight </p>
+				<ul class="fragment" data-fragment-index="1" style="font-size: 80%;">
+					<li> Heliosynchronous satellite image processing company </li>
+					<li> Daily car count data for individual store locations </li>
+					<li> 5.4 million parking lot observations </li>
+					<li> 176,935 unique store locations across entire U.S.</li>
+					<li> 162 retailers (>50% of US retail) </li>
+					<ul>
+					<!--<li> Nationwide firms like Walmart, Home Depot and Starbucks </li>
+					<li> Regional chains like Bob Evans and Ollie's Bargain Outlet </li> -->
+					<li> 2009-2015 </li>
+
+</div>
+
+<div class="col">
+
+  <div class="image-float">
+    <p style="position: absolute; left:500px; top:100px;>
+        <a href="image1.jpg"><img src="./img/satellite_no_overlay.jpg" height="500px"/></a></p>
+    <p class="fragment" data-fragment-index="1" style="position:absolute; left:500px; top:100px;>
+        <a href="image2.jpg"><img src="./img/satellite_overlay.jpg" height="500px"/></a></p>
+
+  </div>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<h1>Aggregate vs. Local Car Counts</h1>
+
+<div class="container">
+
+<div class="col">
+		<div class="image-float">
+  			<img src="img/HDbinscatter.png" style="height:350px;">
+		</div>
+				<ul style="font-size: 80%;">
+					<li > Aggregate satellite imagery is predictive of firm performance (Zhu 2019; Katona et al 2019) </li>
+				</ul>
+</div>
+
+<div class="col">
+
+  <div class="image-float">
+  			<img class="fragment" data-fragment-index="1"  src="img/HDscatter.png" style="height:350px;">
+  </div>
+				<ul style="font-size: 80%;">
+					<li class="fragment" data-fragment-index="1"> However, we find <font color="red">local car counts do not contain incremental information beyond the aggregate</font> </li>
+				</ul>
+</div>
+
+</div>
+</section>
+
+		<section>
+			<h1> Our application of satellite image data </h1>
+			<ul>
+<li  > Identify financial analyst location using data obtained through FOIA requests to state regulators </li>
+			<ul> <li style="font-size: 90%;"  >Available from Uniform Application for Securities Industry Regulation or Transfer (Form U4) </li>
+			</ul>
+
+				<li> An analyst in MSA \(m\) in  quarter \(q\) only observes the local car count for firm  \(j\) </li>
+
+
+
+				<li> Disaggregate satellite data to derive <font color="red">local, time-varying measures of firm performance </font></li>
+			</ul>
+				<p>  </p>
+				<p><span class="math inline" style="display: flex; justify-content: center;">\(Car\ count\  \mathit{difference}_{j,m,q} = \frac{Local\ car \ count_{j,m,q} - National \ car \ count_{j,q}}{National \ car \ count_{j,q}}\)</span></p>
+				<p> </p>
+			<ul> <ul>
+				<li style="font-size: 90%;"> Firm \(j\) in MSA \(m\) in quarter \(q\) </li>
+				<li style="font-size: 90%;"> Isolates the noisy local information </li>
+				</ul>
+							</ul>
+	</section>
+
+
+<!--
+
+<section>
+		<h1 style="font-size: 100%;">We follow the literature to measure analyst forecast error</h1>
+			<p>  </p>
+			<p><span class="math inline" style="display: flex; justify-content: center;">\(Error_{i,j,q} = \frac{Forecast_{i,j,q} - Actual_{j,q}}{Price_{j,q-4}}*100\)</span></p>
+
+
+		<p>Commonly used to study how analyst accuracy is influenced</p>
+		<ul style="font-size: 90%;">
+			<li> Competition - Hong and Kacperczyk (2010) </li>
+			<li> Social networks - Chen, Mayew, and Yan (2018) </li>
+			<li> Decision fatigue - Hirshleifer, Levi, Lourie, and Teoh (2019) </li>
+		</ul>
+		<br> <br>
+
+			<p> Mean: <font color="blue">-0.08</font> Std Dev: <font color="blue">0.17</font></p>
+
+
+</section>
+-->
+
+<style>
+#menu {
+background: #fff;
+position: relative;
+z-index: 1;
+top: 100px;
+right: 20px;
+border-radius: 3px;
+width: 120px;
+border: 1px solid rgba(0,0,0,0.4);
+font-family: 'Open Sans', sans-serif;
+}
+
+#menu a {
+font-size: 13px;
+color: #404040;
+display: block;
+margin: 0;
+padding: 0;
+padding: 10px;
+text-decoration: none;
+border-bottom: 1px solid rgba(0,0,0,0.25);
+text-align: center;
+}
+
+#menu a:last-child {
+border: none;
+}
+
+#menu a:hover {
+background-color: #f8f8f8;
+color: #404040;
+}
+
+#menu a.active {
+background-color: #3887be;
+color: #ffffff;
+}
+
+#menu a.active:hover {
+background: #3074a4;
+}
+
+#fly_us {
+display: block;
+position: relative;
+top: 100px;
+right: 20px;
+margin: 0;
+width: 100px;
+height: 30px;
+padding: 10px;
+border: none;
+border-radius: 3px;
+font-size: 12px;
+text-align: center;
+color: #fff;
+background: #ee8a65;
+}
+
+#fly_minn {
+display: block;
+position: relative;
+top: 100px;
+right: 20px;
+margin: 0;
+width: 100px;
+height: 30px;
+padding: 10px;
+border: none;
+border-radius: 3px;
+font-size: 12px;
+text-align: center;
+color: #fff;
+background: #ee8a65;
+}
+
+#fly_atl {
+display: block;
+position: relative;
+top: 100px;
+right: 20px;
+margin: 0;
+width: 100px;
+height: 30px;
+padding: 10px;
+border: none;
+border-radius: 3px;
+font-size: 12px;
+text-align: center;
+color: #fff;
+background: #ee8a65;
+}
+
+#fly_tb {
+display: block;
+position: relative;
+top: 100px;
+right: 20px;
+margin: 0;
+width: 100px;
+height: 30px;
+padding: 10px;
+border: none;
+border-radius: 3px;
+font-size: 12px;
+text-align: center;
+color: #fff;
+background: #ee8a65;
+}
+
+
+
+
+.legend {
+background-color: #fff;
+border-radius: 3px;
+bottom: 250px;
+box-shadow: 0 1px 2px rgba(0,0,0,0.10);
+font: 8px/normal Arial, Helvetica, sans-serif;
+padding: 10px;
+position: absolute;
+right: 10px;
+
+z-index: 1;
+}
+
+.legend h4 {
+margin: 0 0 10px;
+}
+
+.legend div span {
+border-radius: 50%;
+display: inline-block;
+height: 10px;
+margin-right: 5px;
+width: 10px;
+}
+
+</style>
+
+
+
+
+<section   sav-mapbox="" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;">
+
+
+<h1>What Home Depot looks like from space</h1>
+ <!-- <p>&nbsp</p>
+ <p>&nbsp</p>
+ <p>&nbsp</p>
+ <p>&nbsp</p>
+ <p>&nbsp</p>
+
+
+  <div id='map' class="mapboxgl-map" style="display: flex; justify-content: center; flex-direction: column;"> </div>
+
+<div id='map' style="display: flex; width=100%"> </div>-->
+
+		<div style="display: flex; justify-content: center;">
+				<div><p style="border: 1px solid; border-radius: 5px; padding: 0px 5px 0px 5px; margin-top: 0px; margin-bottom: 5px;" id="sav-msa" class="fragment" data-fragment-index="1" zoom2="">Atlanta MSA</p></div>
+				<div><p style="border: 1px solid; border-radius: 5px; padding: 0px 5px 0px 5px; margin-top: 0px; margin-bottom: 5px;" id="sav-year" class="fragment" data-fragment-index="1" zoom3="">2013 Q4</p></div>
+				<div><p style="border: 1px solid; border-radius: 5px; padding: 0px 5px 0px 5px; margin-top: 0px; margin-bottom: 5px;" id="sav-zillow" class="fragment" data-fragment-index="1" zoom3="">Avg Counts +26%</p></div>
+			</div>
+
+
+		<div id="omap" style="width: 100%; height: 600px;" class="mapboxgl-map">
+		<div class="mapboxgl-canary" style="visibility: hidden;">
+		</div>
+		<div class="mapboxgl-canvas-container mapboxgl-interactive">
+		<canvas class="mapboxgl-canvas" tabindex="0" aria-label="Map" style="position: absolute; width: 400px; height: 300px;" width="500" height="375"></canvas>
+		</div>
+		<div class="mapboxgl-control-container">
+		<div class="mapboxgl-ctrl-top-left"></div><div class="mapboxgl-ctrl-top-right"></div>
+		<div class="mapboxgl-ctrl-bottom-left">
+		<div class="mapboxgl-ctrl" style="display: block;">
+		<a class="mapboxgl-ctrl-logo mapboxgl-compact" target="_blank" rel="noopener" href="https://www.mapbox.com/" aria-label="Mapbox logo"></a></div></div>
+		<div class="mapboxgl-ctrl-bottom-right">
+		<div class="mapboxgl-ctrl mapboxgl-ctrl-attrib mapboxgl-compact">
+		</div></div></div></div>
+<div id='state-legend' class='legend'>
+<h4><font size="-1">Store Car Count</font></h4>
+<div><span style='background-color: #ff9424'></span><font size="-1">Strong</font></div>
+<div><span style='background-color: #f4be87'></span><font size="-1">Average</font></div>
+<div><span style='background-color: #929292'></span><font size="-1">Weak</font></div>
+</div>
+
+<!--
+ <nav id="menu"></nav>
+  <br/>
+
+  <button id='fly_atl'>Atlanta</button>
+  <button id='fly_minn'>Minneapolis</button>
+  <button id='fly_tb'>Tampa</button>
+  <button id='fly_us'>US</button>
+-->
+
+ <script src='js/map1.js'></script>
+			<span class="fragment" data-fragment-index="0" zoom1=""></span>
+ 			<span class="fragment" data-fragment-index="1" zoom2=""></span>
+			<span class="fragment" data-fragment-index="2" zoom3=""></span>
+			<span class="fragment" data-fragment-index="3" zoom4=""></span>
+			<span class="fragment" data-fragment-index="4" zoom5=""></span>
+			<span class="fragment" data-fragment-index="5" zoom6=""></span>
+			<span class="fragment" data-fragment-index="6" zoom7=""></span>
+			<span class="fragment" data-fragment-index="7" zoom8=""></span>
+			<span class="fragment" data-fragment-index="8" zoom9=""></span>
+			<span class="fragment" data-fragment-index="9" zoom10=""></span>
+			<span class="fragment" data-fragment-index="10" zoom11=""></span>
+			<span class="fragment" data-fragment-index="11" zoom12=""></span>
+
+		</section>
+
+
+
+<!--
+
+<section >
+		<h1>What Keith Hughes sees</h1>
+		<div class="container">
+
+		<div class="col">
+
+			<img src="img/hughes.jpg" style="height:150px;">
+			</br>
+
+		</div>
+
+		<div class="col">
+
+		<div id="analystfirm" style="width: 600px"></div>
+		</div>
+
+
+		</div>
+	<ul >
+			<li>	Local car counts vary with respect to Home Depot's national trend. </li>
+
+		</ul>
+
+</section>
+
+-->
+
+
+<section >
+		<h1>Keith Hughes's HD Forecasts</h1>
+		<div class="container">
+
+		<div class="col">
+
+			<img src="img/hughes.jpg" style="height:175px;">
+			</br>
+
+		</div>
+
+		<div class="col">
+
+		<img src="img/hughes_hd.jpg" style="height:300px;">
+		</div>
+
+
+		</div>
+	<ul >
+			<li>	Local car counts vary with respect to Home Depot's national trend. </li>
+			<li class="fragment " data-fragment-index="0">	Hughes also covers a number of other firms in consumer durables, retail, and manufacturing for SunTrust. </li>
+			<li class="fragment " data-fragment-index="0"> We can also observe his forecasts for these other firms made during the <em>same</em> quarter. </li>
+		</ul>
+
+</section>
+<!--
+<section>
+	<section>
+		<h1>Analyst local information bias</h1>
+
+		<br>
+		<table>
+			<thead>
+				<tr>
+					<th></th>
+					<th>Mean</th>
+					<th>Std Dev</th>
+				</tr>
+			</thead>
+			<tbody style="font-size: 80%;">
+				<tr>
+					<th style="border:0 none;">Bias</th>
+					<th style="border:0 none;">-0.08</th>
+					<th style="border:0 none;">0.17</th>
+				</tr>
+				<tr>
+					<th style="border:0 none;">Car count difference</th>
+					<th style="border:0 none;">0.17</th>
+					<th style="border:0 none;">0.47</th>
+				</tr>
+				<tr>
+					<th style="border:0 none;">MSAs with store location</th>
+					<th style="border:0 none;">0.58</th>
+					<th style="border:0 none;">0.27</th>
+				</tr>
+				<tr>
+					<th style="border:0 none;">Number of analysts covering firm</th>
+					<th style="border:0 none;">6.50</th>
+					<th style="border:0 none;">5.35</th>
+				</tr>
+				<tr>
+					<th >Number of MSAs with an analyst</th>
+					<th >2.88</th>
+					<th >1.97</th>
+				</tr>
+
+				</tbody>
+
+		</table>
+	</section>
+	<section style="display: flex; justify-content: center;">
+				<br><br>
+				<img src="img/retail_sum_stats.jpg" style="height:375px;">
+	</section>
+</section>
+-->
+
+<!--
+<section>
+		<h1>Model</h1>
+		<br>
+		<p><span class="math inline">\(Error_{i,j,q} = \beta_1 *Car\ count\ \mathit{difference}_{i,j,q} + \beta_2*Analyst\ controls_{i,j,q} \\ + \beta_3*Firm\ controls_{j,q} + \gamma '*FE + \epsilon_{i,j,q}\)</span></p>
+		<ul class="math inline">
+		<br>
+			<li> Analyst \(i\) for firm \(j\) in quarter \(q\) </li>
+			<li> Setting allows for high-dimensional fixed effects </li>
+			<li> <font color="red">\(\beta_1 > 0\)</font> would suggest that analysts are influenced by local firm information </li>
+		</ul>
+		<p><span class="math inline" style="display: flex; justify-content: center;">\(Error_{i,j,q} = \frac{Forecast_{i,j,q} - Actual_{j,q}}{Price_{j,q-4}}*100\)</span></p>
+</section>
+-->
+
+
+
+
+<!--
+
+<section >
+		<h1>Local information and individual analyst forecast error</h1>
+		<div class="container">
+
+		<div class="col">
+						<table style="font-size: 75%;">
+								<thead>
+									<tr>
+										<th></th>
+
+										<th style="font-size: 150%;">Error</th>
+
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td style="border:0 none; font-size: 100%;">Car Count Difference</td>
+										<td style="border:0 none; font-size: 100%;" ><font color="red">0.0062**</font></td>
+
+									</tr>
+									<tr>
+										<td style="border:0 none;"></td>
+										<td style="border:0 none;">(0.0026)</td>
+
+									</tr>
+									<tr>
+										<td style="border:0 none;" ></td>
+										<td style="border:0 none;" ></td>
+
+									</tr>
+									<tr>
+										<td style="border:0 none;" >Controls</td>
+										<td style="border:0 none;" >Yes</td>
+
+									</tr>
+									<tr>
+										<td style="border:0 none;">Firm FE</td>
+										<td style="border:0 none;"><font color="red">Yes</font></td>
+
+									</tr>
+									<tr>
+										<td style="border:0 none;" class="math inline">Quarter FE</td>
+										<td style="border:0 none;"><font color="red">Yes</font></td>
+
+									</tr>
+
+									<tr>
+										<td style="border:0 none;" class="math inline">Firm\(\times\)Quarter FE</td>
+										<td style="border:0 none;">No</td>
+
+									</tr>
+									<tr>
+										<td style="border:0 none;" class="math inline">Analyst\(\times\)Firm FE</td>
+										<td style="border:0 none;">No</td>
+
+									</tr>
+									<tr>
+										<td class="math inline">Analyst\(\times\)Quarter FE</td>
+										<td >No</td>
+
+									</tr>
+									<tr>
+										<td style="border:0 none;" class="math inline">\(R^2\)</td>
+										<td style="border:0 none;">0.169</td>
+
+									</tr>
+									<tr>
+										<td class="math inline">Observations</td>
+										<td >16,849</td>
+
+
+								</tbody>
+					</table>
+		</div>
+
+		<div class="col">
+		<br>
+	<ul>
+		<p style="font-size: 85%;" class="math inline"> Firm and  Quarter fixed effects </p>
+		<ul>
+			<li style="font-size: 75%;"> Control for turnover, size, book to market, # analysts, analyst experience (firm and overall), and forecast age </li>
+		</ul>
+</ul>
+		</div>
+
+		</div>
+</section>
+
+-->
+
+
+
+<!--
+
+ <section >
+ 		<h1>Local information and individual analyst forecast error</h1>
+ 		<div class="container">
+
+ 		<div class="col">
+ 								<table style="font-size: 80%;">
+												<thead>
+													<tr>
+														<th></th>
+
+														<th style="font-size: 150%;">Error</th>
+
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td style="border:0 none; font-size: 100%;">Car Count Difference</td>
+															<td style="border:0 none; font-size: 100%;" ><font color="red">0.010***</font></td>
+															</tr>
+													<tr>
+														<td style="border:0 none;"></td>
+															<td style="border:0 none;" >(0.003)</td>
+															</tr>
+													<tr>
+														<td style="border:0 none;" ></td>
+														<td style="border:0 none;" ></td>
+														</tr>
+													<tr>
+													<tr>
+														<td style="border:0 none;" >Controls</td>
+														<td style="border:0 none;" >Yes</td>
+														</tr>
+
+													<tr>
+														<td style="border:0 none;" class="math inline">Firm\(\times\)Quarter FE</td>
+														<td style="border:0 none;" ><font color="red">Yes</font></td>
+													</tr>
+													<tr>
+														<td style="border:0 none;" class="math inline">MSA FE</td>
+														<td style="border:0 none;" ><font color="red">Yes</font></td>
+													</tr>
+													<tr>
+														<td style="border:0 none;" class="math inline">Analyst\(\times\)Firm FE</td>
+														<td style="border:0 none;" >No</td>
+													</tr>
+													<tr>
+														<td class="math inline">Analyst\(\times\)Quarter FE</td>
+														<td >No</td>
+																</tr>
+													<tr>
+														<td style="border:0 none;" class="math inline">\(R^2\)</td>
+														<td style="border:0 none;" >0.816</td>
+													</tr>
+													<tr>
+														<td class="math inline">Observations</td>
+														<td  >18,189</td>
+
+												</tbody>
+					</table>
+ 		</div>
+
+ 		<div class="col">
+		<br>
+ <ul style="font-size: 75%;">
+ 	<p class="math inline" > Firm \(\times\) Quarter fixed effects </p>
+ 	<ul style="font-size: 95%;">
+ 		<li> Rules out firm performance and any information all analysts can access </li>
+ 		<ul>
+ 			<li> Company filings on EDGAR, earnings guidance calls, etc. </li>
+ 		</ul>
+ 		<li> Turnover, size, book to market, and # analysts are all subsumed </li>
+ 	</ul>
+ 	<p> Identified by variation in local signal that analysts receive </p>
+</ul>
+ 		</div>
+
+ 		</div>
+</section>
+
+
+
+
+ <section >
+		<h1>Local information and individual analyst forecast error</h1>
+ 		<div class="container">
+
+ 		<div class="col">
+ 										<table style="font-size: 80%;">
+														<thead>
+															<tr>
+																<th></th>
+																	<th style="font-size: 150%;">Error</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td style="border:0 none; font-size: 100%;">Car Count Difference</td>
+																	<td style="border:0 none; font-size: 100%;" ><font color="red">0.010***</font></td>
+															</tr>
+															<tr>
+																<td style="border:0 none;"></td>
+																	<td style="border:0 none;" >(0.003)</td>
+															</tr>
+
+															<tr>
+															<tr>
+																<td style="border:0 none;" ></td>
+																	<td style="border:0 none;" ></td>
+																</tr>
+															<tr>
+																<td style="border:0 none;" >Controls</td>
+																	<td style="border:0 none;" >Yes</td>
+																</tr>
+
+															<tr>
+																<td style="border:0 none;" class="math inline">Firm\(\times\)Quarter FE</td>
+																	<td style="border:0 none;" ><font color="red">Yes</font></td>
+															</tr>
+															<tr>
+																<td style="border:0 none;" class="math inline">MSA FE</td>
+																<td style="border:0 none;" >No</td>
+															</tr>															<tr>
+																<td style="border:0 none;" class="math inline">Analyst\(\times\)Firm FE</td>
+																	<td style="border:0 none;" ><font color="red">Yes</font></td>
+																</tr>
+															<tr>
+																<td class="math inline">Analyst\(\times\)Quarter FE</td>
+																<td  >No</td>
+															</tr>
+															<tr>
+																<td style="border:0 none;" class="math inline">\(R^2\)</td>
+																	<td style="border:0 none;" >0.849</td>
+																</tr>
+															<tr>
+																<td class="math inline">Observations</td>
+																		<td  >18,005</td>
+
+														</tbody>
+					</table>
+ 		</div>
+
+ 		<div class="col">
+		<br>
+<ul  style="font-size: 75%;">
+	<p class="math inline"> Include Analyst \(\times\) Firm fixed effects </p>
+	<ul>
+		<li> Rules out time-invariant analyst and matching characteristics  </li>
+		<ul>
+			<li> Proximity to HQ, school ties, education, skill, industry experience </li>
+		</ul>
+	</ul>
+</ul>
+ 		</div>
+
+ 		</div>
+</section>
+
+
+
+<section >
+ 		<h1>Local information and individual analyst forecast error</h1>
+		<div class="container">
+
+ 		<div class="col">
+ 												<table style="font-size: 80%;">
+																<thead>
+																	<tr>
+																		<th></th>
+																		<th style="font-size: 150%;">Error</th>
+																		</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td style="border:0 none; font-size: 100%;">Car Count Difference</td>
+																			<td style="border:0 none; font-size: 100%;" ><font color="red">0.0136***</font></td>
+																	</tr>
+																	<tr>
+																		<td style="border:0 none;"></td>
+																				<td style="border:0 none;" >(0.004)</td>
+																	</tr>
+																	<tr>
+																		<td style="border:0 none;" ></td>
+																			<td style="border:0 none;" ></td>
+																	</tr>
+
+																	<tr>
+																		<td style="border:0 none;" >Controls</td>
+																			<td style="border:0 none;" >Yes</td>
+																	</tr>
+
+
+																	<tr>
+																		<td style="border:0 none;" class="math inline">Firm\(\times\)Quarter FE</td>
+																		<td style="border:0 none;" ><font color="red">Yes</font></td>
+																	</tr>
+																	<tr>
+																		<td style="border:0 none;" class="math inline">MSA FE</td>
+																		<td style="border:0 none;" >No</td>
+																	</tr>																		<tr>
+																		<td style="border:0 none;" class="math inline">Analyst\(\times\)Firm FE</td>
+																		<td style="border:0 none;" ><font color="red">Yes</font></td>
+																	</tr>
+																	<tr>
+																		<td class="math inline">Analyst\(\times\)Quarter FE</td>
+																			<td  ><font color="red">Yes</font></td>
+																	</tr>
+																	<tr>
+																		<td style="border:0 none;" class="math inline">\(R^2\)</td>
+																		<td style="border:0 none;" >0.896</td>
+																	</tr>
+																	<tr>
+																		<td class="math inline">Observations</td>
+																		<td  >16,591</td>
+
+																</tbody>
+					</table>
+ 		</div>
+
+ 		<div class="col">
+<br>
+<ul style="font-size: 75%;">
+	<li class="math inline"> Include Analyst \(\times\) Quarter fixed effects </li>
+	<ul>
+		<li> Rules out any other local effects </li>
+		<ul>
+			<li> Performance of local economy, weather, local sports, etc.  </li>
+		</ul>
+	</ul>
+	<li class="fragment fade-in"  data-fragment-index="1"> One SD increase in CCD (0.47)
+	is associated with a <font color="red">63 bps increase in forecast error, ~5%</font> of the SD</li>
+	<li class="fragment fade-in"  data-fragment-index="2"> Results robust to exclusion of NYC analysts and exclusion of instances with low satellite frequency </li>
+</ul>
+
+ 		</div>
+
+ 		</div>
+</section>
+-->
+
+
+	<section>
+					<h1 style="font-size: 110%;">Local Information and Individual Analyst Forecast Error </h1>
+					<p style="font-size: 75%;"> <span class="math inline">\(Error_{i,j,q} = \beta_1 *Car\ count\ \mathit{difference}_{i,j,q} + \beta_2*Analyst\ controls_{i,j,q} + \beta_3*Firm\ controls_{j,q} + \gamma '*FE + \epsilon_{i,j,q}\)</span></p>
+					<table class="fragment fade-in"  data-fragment-index="0" style="font-size: 80%;">
+						<thead>
+							<tr>
+								<th></th>
+								<th></th>
+								<th style="font-size: 150%;">Error</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td style="border:0 none;">Car Count Difference</td>
+								<td style="border:0 none;" ><font color="red">0.0100***</font></td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1" ><font color="red">0.0010***</font></td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2" ><font color="red">0.0136***</font></td>
+							</tr>
+							<tr>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;">(0.003)</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1" >(0.003)</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2" >(0.004)</td>
+							</tr>
+
+							<tr>
+								<td style="border:0 none;" class="math inline">Controls</td>
+								<td style="border:0 none;" >Yes</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1">Yes</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2">Yes</td>
+							</tr>
+							<tr>
+								<td style="border:0 none;" class="math inline">Firm\(\times\)Quarter FE</td>
+								<td style="border:0 none;" ><font color="red">Yes</font></td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1"><font color="red">Yes</font></td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2"><font color="red">Yes</font></td>
+							</tr>
+							<tr>
+								<td style="border:0 none;" class="math inline">MSA FE</td>
+								<td style="border:0 none;" ><font color="red">Yes</font></td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1">No</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2">No</td>
+							</tr>
+							<tr>
+								<td style="border:0 none;" class="math inline">Analyst\(\times\) Firm FE</td>
+								<td style="border:0 none;" >No</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1"><font color="red">Yes</font></td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2"><font color="red">Yes</font></td>
+							</tr>							
+							<tr>
+								<td class="math inline">Analyst\(\times\) Quarter FE</td>
+								<td >No</td>
+								<td class="fragment fade-in"  data-fragment-index="1">No</td>
+								<td class="fragment fade-in"  data-fragment-index="2"><font color="red">Yes</font></td>
+							</tr>							
+							<tr>
+								<td style="border:0 none;" class="math inline">\(R^2\)</td>
+								<td style="border:0 none;">0.816</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1">0.849</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2">0.896</td>
+							</tr>
+							<tr>
+								<td class="math inline">Observations</td>
+								<td >18,189</td>
+								<td  class="fragment fade-in"  data-fragment-index="1">18,005</td>
+								<td  class="fragment fade-in"  data-fragment-index="2">16,591</td>
+</tr>
+
+						</tbody>
+					</table>
+					
+					<li style="font-size: 75%;" class="fragment fade-in"  data-fragment-index="3"> One SD increase in CCD (0.47)
+					is associated with a <font color="red">63 bps increase in forecast error, ~5%</font> of the SD</li>
+					<li style="font-size: 75%;" class="fragment fade-in"  data-fragment-index="4"> Results robust to exclusion of NYC analysts and exclusion of instances with low satellite frequency </li>
+	</section>
+
+
+
+
+<!--
+	<section>
+					<h1 style="font-size: 110%;">Local Information and Individual Analyst Forecast Error - Robustness </h1>
+					<table style="font-size: 80%;">
+						<thead>
+							<tr>
+								<th></th>
+								<th></th>
+								<th style="font-size: 150%;">Error</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td style="border:0 none;">Car Count Difference</td>
+								<td style="border:0 none;" ><font color="red">0.0069*</font></td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1" ><font color="red">0.0068**</font></td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2" ></td>
+							</tr>
+							<tr>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;">(0.0039)</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1" >(0.0028)</td>
+								<td style="border:0 none;"></td>
+							</tr>
+							<tr>
+
+								<td style="border:0 none;" class="math inline">Low Car Count</td>
+								<td style="border:0 none;" ><font color="red"></font></td>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2" ><font color="red">-0.0043*</font></td>
+							</tr>
+							<tr>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2">(0.0021)</td>
+							</tr>
+							<tr>
+								<td style="border:0 none;" class="math inline" >High Car Count </td>
+								<td style="border:0 none;" ></td>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2"><font color="red">0.0050**</font></td>
+							</tr>
+							<tr>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;" ></td>
+								<td style="border:0 none;" ></td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2">(0.0022)</td>
+							</tr>
+							<tr>
+								<td style="border:0 none;" class="math inline">Controls</td>
+								<td style="border:0 none;" >Yes</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1">Yes</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2">Yes</td>
+							</tr>
+							<tr>
+								<td class="math inline">Firm\(\times\)Quarter FE</td>
+								<td >Yes</td>
+								<td class="fragment fade-in"  data-fragment-index="1">Yes</td>
+								<td class="fragment fade-in"  data-fragment-index="2">Yes</td>
+							</tr>
+							<tr>
+								<td style="border:0 none;" class="math inline">\(R^2\)</td>
+								<td style="border:0 none;">0.853</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1">0.818</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2">0.817</td>
+							</tr>
+							<tr>
+								<td class="math inline">Observations</td>
+								<td >5,544</td>
+								<td  class="fragment fade-in"  data-fragment-index="1">10,380</td>
+								<td  class="fragment fade-in"  data-fragment-index="2">16,312</td>
+</tr>
+<tr>
+								<td class="math inline">Sample</td>
+								<td >Non-NYC</td>
+								<td  class="fragment fade-in"  data-fragment-index="1">Freq. Satellite</td>
+								<td  class="fragment fade-in"  data-fragment-index="2">Full</td>
+</tr>
+						</tbody>
+					</table>
+	</section>
+-->
+<section>
+		<h1 style="font-size: 125%;"> Heterogeneity in analyst local information incorporation - Findings </h1>
+		<ul>
+		<li> Analysts with more <font color="red">experience</font> are less likely to generalize based on local information </li>
+		<li class="fragment fade-in"  data-fragment-index="1"> Analysts are less likely to generalize local information when analysts <font color="red">in other MSAs </font> also cover the firm </li>
+		<ul>
+		<li class="fragment fade-in"  data-fragment-index="1"> Analysts are <font color="blue">not</font> less likely to generalize local information when other analysts cover the firm but are <font color="blue">located in the same MSA</font> </li>
+		</ul>
+		<li class="fragment fade-in"  data-fragment-index="2"> Analysts rely less on local information <font color="red">when satellite data is commercially available</font> </li>
+		</ul>
+
+</section>
+<!--
+	<section>
+					<h1 style="font-size: 110%;">Analyst experience reduces local information generalization</h1>
+					<table style="font-size: 80%;">
+						<thead>
+							<tr>
+								<th></th>
+								<th style="font-size: 150%;">Error</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td style="border:0 none;">Car Count Difference</td>
+								<td style="border:0 none;" >0.0087***</td>
+							</tr>
+							<tr>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;">(0.0030)</td>
+							</tr>
+							<tr>
+
+								<td style="border:0 none;" class="math inline">Car Count Difference \(\times\) Experience</td>
+								<td style="border:0 none;" ><font color="red">-0.0030*</font></td>
+							</tr>
+							<tr>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;">(0.0016)</td>
+							</tr>
+							<tr>
+								<td  style="border:0 none;"class="math inline">Controls</td>
+								<td style="border:0 none;" >Yes</td>
+							</tr>
+							<tr>
+								<td class="math inline">Firm\(\times\)Quarter FE</td>
+								<td >Yes</td>
+							</tr>
+							<tr>
+								<td style="border:0 none;" class="math inline">\(R^2\)</td>
+								<td style="border:0 none;">0.818</td>
+							</tr>
+							<tr>
+								<td class="math inline">Observations</td>
+								<td >16,315</td>
+
+						</tbody>
+					</table>
+					<br>
+					This suggests that one reason more experienced analysts are more accurate is that they learn to address their own biases
+				</section>
+-->
+<!--
+<section>
+		<h1 style="font-size: 125%;"> Heterogeneity in analyst local information generalization </h1>
+		<p> How does the presence of other analysts modulate the local information generalization? </p>
+		<ul>
+			<li> Interact Car count difference with <font color="blue"># of Analysts</font> and <font color="red"># of MSAs</font> </li>
+			<ul>
+				<li> A decrease in local info bias based on <font color="blue"># of Analysts</font>  suggests analysts may overcome this error
+					by <font color="blue">learning from each other</font> </li>
+				<li> A decrease in local info bias based on <font color="red"># of MSAs</font>  suggests analysts may overcome this hasty generalization by
+					<font color="red">learning from analysts who are in different locations</font> </li>
+			</ul>
+		<ul>
+</section>
+-->
+<!--
+	<section>
+					<h1 style="font-size: 110%;">Local information and individual analyst forecast error - Heterogeneity</h1>
+					<p style="font-size: 80%;"><span class="math inline">\(Error_{i,j,q} = \beta_1 *Car\ count\  \mathit{difference}_{i,j,q} + \beta_2 *Y_{i,q}
+		 + \beta_3 *Car\ count\  \mathit{difference}_{i,j,q}\times Y_{i,q} \\ + \beta_2*Analyst\ controls_{i,j,q}  + \beta_3*Firm\ controls_{j,q} +
+		\gamma '*FE + \epsilon_{i,j,q}\)</span></p>
+					<table style="font-size: 70%;">
+						<thead>
+							<tr>
+								<th></th>
+								<th></th>
+								<th style="font-size: 150%;">Error</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td style="border:0 none;">Car Count Difference</td>
+								<td style="border:0 none;" >0.0087***</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1" >0.0087***</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2" >0.0099***</td>
+							</tr>
+							<tr>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;">(0.0030)</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1" >(0.0031)</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2" >(0.0032)</td>
+							</tr>
+							<tr>
+
+								<td style="border:0 none;" class="math inline">Car Count Difference \(\times\) Experience</td>
+								<td style="border:0 none;" ><font color="red">-0.0030*</font></td>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;"></td>
+							</tr>
+							<tr>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;">(0.0016)</td>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;"></td>
+							</tr>
+							<tr>
+								<td style="border:0 none;" class="math inline" >Car Count Difference \(\times\) # Analysts </td>
+								<td style="border:0 none;" ></td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1"><font color="blue">0.0008</font></td>
+								<td style="border:0 none;"></td>
+							</tr>
+							<tr>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;" ></td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1">(0.0026)</td>
+								<td style="border:0 none;"></td>
+							</tr>
+							<tr>
+								<td style="border:0 none;" class="math inline" >Car Count Difference \(\times\) # MSAs</td>
+								<td style="border:0 none;" ></td>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2"><font color="red">-0.0030*</font></td>
+							</tr>
+							<tr>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;" ></td>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2">(0.0017)</td>
+							</tr>
+							<tr>
+								<td style="border:0 none;">Controls</td>
+								<td style="border:0 none;" >Yes</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1">Yes</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2">Yes</td>
+							</tr>
+							<tr>
+								<td class="math inline">Firm\(\times\)Quarter FE</td>
+								<td >Yes</td>
+								<td class="fragment fade-in"  data-fragment-index="1">Yes</td>
+								<td class="fragment fade-in"  data-fragment-index="2">Yes</td>
+							</tr>
+							<tr>
+								<td style="border:0 none;" class="math inline">\(R^2\)</td>
+								<td style="border:0 none;">0.818</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1">0.818</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2">0.818</td>
+							</tr>
+							<tr>
+								<td class="math inline">Observations</td>
+								<td >16,315</td>
+								<td  class="fragment fade-in"  data-fragment-index="1">16,315</td>
+								<td  class="fragment fade-in"  data-fragment-index="2">16,315</td>
+
+						</tbody>
+					</table>
+				</section>
+-->
+<!--
+<section>
+	<h1>What are the effects on consensus estimate?</h1>
+		<div style="display: flex; justify-content: center;">
+			<div>
+				<img src="img/elephant.jpg" style="max-height:500px; height:auto; width:auto">
+			</div>
+
+		</div>
+		<div style="display: flex; justify-content: center;">
+					The parable of the blind men and an elephant
+</div>
+
+</section>
+-->
+<section>
+		<h1 style="font-size: 120%;"> What are the effects on consensus forecasts and firm liquidity? </h1>
+
+
+
+		<ul>
+		<li> Brokerage firms may be aware of analyst geographic concentration, but frictions may prevent them from dispersing analysts (Ellison and Glaeser, 1999)</li>
+					<!--
+					<ul style="font-size: 90%;">
+					<li> Need employees close by to monitor </li>
+					<li> Talent is concentrated (e.g., New York) </li>
+					<li> Firms typically have one analyst cover each firm </li>
+					</ul>
+					-->
+			<li class="fragment fade-in"  data-fragment-index="0"> We expect noise from local information <font color="blue"> to aggregate when analysts are clustered in the same MSA</font> and to
+			<font color="red">cancel out when analysts are disperse.</font> </li>
+			<li class="fragment fade-in"  data-fragment-index="1"> Expand sample to full set of IBES firms</li>
+			<li class="fragment fade-in"  data-fragment-index="1"> Firms with more geographically concentrated analysts will have</li>
+			<ul style="font-size: 90%;">
+							<li class="fragment fade-in"  data-fragment-index="2">Higher consensus forecast errors</li>
+							<li class="fragment fade-in"  data-fragment-index="2">Lower liquidity, due to a deteriorated information environment</li>
+			</ul>
+
+		<ul>
+</section>
+
+<section>
+<h1 style="font-size: 120%;"> Consensus Forecast Error by Geographic Dispersion </h1>
+<p> Sample is all IBES firms matched with analyst location </p>
+<div class="container">
+
+<div class="col">
+  <div class="image-float">
+  			<img src="img/num_analysts_error.jpg" style="height:350px;">
+	</div>
+	<p> Sum stats </p>
+</div>
+
+<div class="col" >
+  <div class="image-float" >
+  			<img class="fragment fade-in"  data-fragment-index="1" src="img/num_analysts_error_reg.jpg" style="height:350px;">
+	</div>
+	<p class="fragment fade-in"  data-fragment-index="1"> Regression Coefficients </p>
+</div>
+
+</div>
+</section>
+
+
+<section>
+<h1 style="font-size: 120%;"> Firm Liquidity by Geographic Dispersion </h1>
+<p> Sample is all IBES firms matched with analyst location </p>
+<div class="container">
+
+<div class="col">
+  <div class="image-float">
+  			<img src="img/liquidity.jpg" style="height:350px;">
+	</div>
+	<p> Sum stats </p>
+</div>
+
+<div class="col" >
+  <div class="image-float" >
+  			<img class="fragment fade-in"  data-fragment-index="1" src="img/liquidity_reg.jpg" style="height:350px;">
+	</div>
+	<p class="fragment fade-in"  data-fragment-index="1"> Regression Coefficients </p>
+</div>
+
+</div>
+	<p class="fragment fade-in"  data-fragment-index="2"> Consensus error and liquidity results robust to exogenous brokerage closure/merger setting </p>
+</section>
+
+<!--
+<section>
+		<h1 style="font-size: 100%;">Accuracy improves when analysts are located in more MSAs</h1>
+		<p style="font-size: 80%;"> Analyst forecasts for Orbital Insight sample - separated by # of Analyst MSAs </p>
+		<table>
+			<thead>
+				<tr>
+					<th># MSAs</th>
+					<th>%</th>
+					<th>Avg. # Analysts</th>
+					<th> Avg. Error</th>
+				</tr>
+			</thead>
+			<tbody style="font-size: 80%;">
+				<tr>
+					<th style="border:0 none;">1</th>
+					<th style="border:0 none;">30.7%</th>
+					<th style="border:0 none;">2.4</th>
+					<th style="border:0 none;">-0.088</th>
+				</tr>
+				<tr>
+					<th style="border:0 none;">2</th>
+					<th style="border:0 none;">23.0%</th>
+					<th style="border:0 none;">4.7</th>
+					<th style="border:0 none;">-0.080</th>
+				</tr>
+				<tr>
+					<th style="border:0 none;">3</th>
+					<th style="border:0 none;">16.6%</th>
+					<th style="border:0 none;">7.6</th>
+					<th style="border:0 none;">-0.078</th>
+				</tr>
+				<tr>
+					<th style="border:0 none;">4</th>
+					<th style="border:0 none;">12.2%</th>
+					<th style="border:0 none;">10.2</th>
+					<th style="border:0 none;">-0.067</th>
+				</tr>
+				<tr>
+					<th >5+</th>
+					<th >17.5%</th>
+					<th >11.9</th>
+					<th >-0.063</th>
+				</tr>
+
+				</tbody>
+
+		</table>
+
+Contrary to the perception that all analysts are on
+				Wall Street,  less than a third (30.7%) of firms have analysts that are all
+				located in the same MSA.
+		<aside class="notes">
+				Contrary to the perception that all analysts are on
+				Wall Street, this table shows that less than a third (30.7%) of firms have analysts that are all
+				located in the same MSA. The majority of firms (60.7%) have analysts in two or more MSAs
+				and 17.5% of firms have analysts in five or more MSAs.
+		</aside>
+</section>
+
+
+<section>
+					<h1 style="font-size: 110%;">Variation in local information and the spread of individual analyst forecasts </h1>
+					<p><span class="math inline" tyle="font-size: 90%;">\(Range\ of\ Individual\ Forecasts_{j,q} = \beta_1 *Range\ of\ Car\ Counts_{j,q} \\ +
+					\beta_2*Controls_{j,q} + \gamma '*FE + \epsilon_{j,q}\)</span></p>
+
+					<table style="font-size: 80%;" class="fragment fade-in"  data-fragment-index="1">
+						<thead>
+							<tr>
+								<th></th>
+								<th colspan="2">Range of Individual Forecasts</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td style="border:0 none;">Range of Car Counts</td>
+								<td style="border:0 none;" ><font color="red">0.0228***</font></td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1" ><font color="red">0.0118***</font></td>
+							</tr>
+							<tr>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;">(0.0042)</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1" >(0.0030)</td>
+							</tr>
+							<tr>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1" ></td>
+							</tr>
+							<tr>
+								<td style="border:0 none;" class="math inline">Controls</td>
+								<td style="border:0 none;" >Yes</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1">Yes</td>
+							</tr>
+							<tr>
+								<td style="border:0 none;" class="math inline">Firm FE</td>
+								<td style="border:0 none;" >No</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1">Yes</td>
+							</tr>
+							<tr>
+								<td class="math inline">Quarter FE</td>
+								<td >Yes</td>
+								<td class="fragment fade-in"  data-fragment-index="1">Yes</td>
+							</tr>
+							<tr>
+								<td style="border:0 none;" class="math inline">\(R^2\)</td>
+								<td style="border:0 none;">0.128</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1">0.377</td>
+							</tr>
+							<tr>
+								<td class="math inline">Observations</td>
+								<td >2,638</td>
+								<td  class="fragment fade-in"  data-fragment-index="1">2,635</td>
+
+						</tbody>
+					</table>
+					<p style="font-size: 90%;" class="fragment fade-in"  data-fragment-index="2"> Consistent with local difference in information manifesting in the aggregate firm-level forecast </p>
+				</section>
+				-->
+<!--
+<section>
+		<h1 style="font-size: 90%;">Measuring analyst dispersion for the IBES-analyst location sample</h1>
+		<p> <font color="red">Consensus forecast error</font> = absolute difference between price-scaled consensus forecast and actual </p>
+		<br>
+		<p> <font color="red">MSA Herfindahl Index</font> = count of analysts in each MSA in each firm-quarter to a market share
+		of MSA, then squared and summed across all MSAs in the firm-quarter </p>
+		<table class="fragment fade-in"  data-fragment-index="1">
+			<thead>
+				<tr>
+					<th></th>
+					<th>Mean</th>
+					<th>Std Dev</th>
+				</tr>
+			</thead>
+			<tbody style="font-size: 80%;">
+				<tr>
+					<th style="border:0 none;">Consensus Abs(Error)</th>
+					<th style="border:0 none;">0.28</th>
+					<th style="border:0 none;">0.28</th>
+				</tr>
+				<tr>
+					<th style="border:0 none;">MSA Herfindahl Index</th>
+					<th style="border:0 none;">0.60</th>
+					<th style="border:0 none;">0.29</th>
+				</tr>
+				<tr>
+					<th style="border:0 none;"># Analysts covering firm</th>
+					<th style="border:0 none;">3.90</th>
+					<th style="border:0 none;">3.13</th>
+				</tr>
+				<tr>
+					<th >Number of MSAs with an analyst</th>
+					<th >2.06</th>
+					<th >1.37</th>
+				</tr>
+
+				</tbody>
+
+</table>
+
+</section>
+-->
+
+
+<!--
+<section>	<h1 style="font-size: 110%;">Consensus forecast error by geographic dispersion </h1>
+	<p class="math inline" style="display: flex; justify-content: center;"> IBES - Analyst location sample </p>
+		<div style="display: flex; justify-content: center;">
+
+<div id="forecasterror" style="width: 500px"></div>
+
+	</div>
+
+	<p class="math inline" style="display: flex; justify-content: center; font-size: 70%;"> \(Consensus\ Abs(Error)_{j,q} = \frac{|Consensus_{j,q} - Actual_{j,q}|}{Price_{j,q}} \) </p>
+</section>
+
+
+
+<section>
+					<h1 style="font-size: 110%;">Analyst geographic dispersion and consensus forecasts</h1>
+
+			 		<div class="container">
+
+ 		<div class="col">
+			<table style="font-size: 75%;">
+						<thead>
+							<tr>
+								<th></th>
+								<th colspan="4">Consensus Abs(Error)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td style="border:0 none;">MSA HHI</td>
+								<td style="border:0 none;" ><font color="red">0.0887***</font></td>
+								<td style="border:0 none;" ></td>
+								<td style="border:0 none;" ></td>
+							</tr>
+							<tr>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;">(0.0059)</td>
+								<td style="border:0 none;" ></td>
+								<td style="border:0 none;" ></td>
+							</tr>
+							<tr>
+
+								<td style="border:0 none;" ># of MSAs</td>
+								<td style="border:0 none;" ></td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1"><font color="red">-0.0131***</font></td>
+								<td style="border:0 none;"></td>
+							</tr>
+							<tr>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;" ></td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1">(0.0014)</td>
+								<td style="border:0 none;"></td>
+							</tr>
+							<tr>
+								<td style="border:0 none;" >Controls</td>
+								<td style="border:0 none;">Yes</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1">Yes</td>
+							</tr>
+							<tr>
+								<td style="border:0 none;">Industry FE</td>
+								<td style="border:0 none;">Yes</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1">Yes</td>
+							</tr>
+							<tr>
+								<td style="border:0 none;" class="math inline">Quarter FE</td>
+								<td style="border:0 none;">Yes
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1">Yes</td>
+							</tr>
+							<tr>
+								<td style="border:0 none;" class="math inline"># Analysts FE</td>
+								<td style="border:0 none;">No</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1">Yes</td>
+							</tr>
+							<tr>
+								<td style="border:0 none;" class="math inline">\(R^2\)</td>
+								<td style="border:0 none;">0.277</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1">0.275</td>
+							</tr>
+							<tr>
+								<td class="math inline">Observations</td>
+								<td >180,393</td>
+								<td  class="fragment fade-in"  data-fragment-index="1">180,393</td>
+
+						</tbody>
+					</table>
+					</div>
+
+
+ 					<div class="col">
+					<ul  style="font-size: 75%;">
+						<p class="fragment fade-in"  data-fragment-index="2"> Across all IBES firms wider geographic diversity associated with lower consensus error </p>
+						<p class="fragment fade-in"  data-fragment-index="2"> Robust to firm fixed-effects </p>
+						<p class="fragment fade-in"  data-fragment-index="2"> Look within firms that lose coverage due to exogenous reduction in analyst coverage (Hong and Kacperczyk, 2010) </p>
+						<ul>
+							<li class="fragment fade-in"  data-fragment-index="2"> Some losses lead to a reduction in geographic diversity, other do not  </li>
+
+							<li class="fragment fade-in"  data-fragment-index="2"> Lower diversity leads to higher error </li>
+
+						</ul>
+</ul>
+					</div>
+
+</section>
+-->
+
+
+<!--
+<section>	<h1 style="font-size: 110%;">Consensus forecast error by geographic dispersion </h1>
+	<div style="display: flex; justify-content: center;">
+			<img src="img/num_analysts_error.jpg" style="height:500px;">
+	</div>
+	
+	<p style="font-size: 75%;"><span class="math inline">\(Consensus\ Abs(Error)_{j,q} = \beta_1 *Number\ Unique\ MSAs_{i,j,q} + \beta_2*Firm\ controls_{j,q} + \\ \beta_3*Industy\ FE + \beta_4*Quarter\ FE + \beta_5*Number\ Analysts\ FE + \epsilon_{j,q}\)</span></p>
+
+</section>
+-->
+
+<!--
+<section>
+	<h1>Addressing Endogeneity</h1>
+	<p> There aren't obvious reasons why endogeneity would be an important concern </p>
+	<ul style="font-size: 90%;">
+		<li> The majority of brokerage firms concentrate their equity research in a single location (or limited number of locations).</li>
+		<li> Brokerage firms are unlikely to shift entire research staffs' operations in response to the relative
+			geographic dispersion of any single covered firm  </li>
+	</ul>
+
+</section>
+
+<section>
+	<h1>Addressing endogeneity</h1>
+
+	<p> Endogeneity is not an obvious concern </p>
+	<ul> <li style="font-size: 90%;"> brokerage firms unlikely to shift operations in response to the relative
+	geographic dispersion of any single firm </li> </ul>
+	<p class="fragment fade-in"  data-fragment-index="1"> To rule out potential concern, we exploit the <font color="red">exogenous
+	shift in geographic coverage due to brokerage closures and mergers</font> </p>
+	<ul class="fragment fade-in"  data-fragment-index="1">
+		<li style="font-size: 90%;"> Hong and Kacperczyk (2010), Kelly and Ljungqvist (2012) </li>
+	</ul>
+	<p class="fragment fade-in"  data-fragment-index="2"> Look within firms that lose coverage due to exogenous reduction in analyst coverage </p>
+	<ul class="fragment fade-in"  data-fragment-index="2">
+		<li style="font-size: 90%;"> Some firms will see <font color="red">decreased geographic diversity</font> (e.g., lose only analyst in Minneapolis) </li>
+		<li style="font-size: 90%;"> Others will <font color="blue">retain the same geographic diversity</font> (e.g., lose one of three analysts in New York) </li>
+	</ul>
+
+</section>
+
+<section>
+					<h1 style="font-size: 110%;">Exogenous Change in Analyst Geographic Dispersion and Consensus Analyst Forecasts</h1>
+
+
+		<table style="font-size: 80%;">
+						<thead>
+							<tr>
+								<th></th>
+								<th colspan="2">Consensus Abs(Error)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td style="border:0 none;">MSA Herfindahl Index</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1" > <font color="red">0.0150***</font></td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2" > <font color="red"></font></td>
+							</tr>
+							<tr>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1" > (0.0043)</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2" > <font color="red"></font></td>
+							</tr>
+							<tr>
+								<td style="border:0 none;">Number of MSAs</td>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2" > -0.0102***</td>
+							</tr>
+							<tr>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2" >(0.0034)</td>
+							</tr>
+							<tr>
+								<td style="border:0 none;">Loss of MSA</td>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2" ><font color="red">0.0179*</font></td>
+							</tr>
+							<tr>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2" >(0.0107)</td>
+							</tr>
+							<tr>
+								<td style="border:0 none;" class="math inline">Controls</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1">Yes</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2">Yes</td>
+							</tr>
+							<tr>
+								<td style="border:0 none;" class="math inline">Firm FE</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1">Yes</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2">No</td>
+							</tr>
+							<tr>
+								<td style="border:0 none;" class="math inline">Industry FE</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1">No</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2">Yes</td>
+							</tr>
+							<tr>
+								<td class="math inline">Quarter FE</td>
+								<td class="fragment fade-in"  data-fragment-index="1">Yes</td>
+								<td class="fragment fade-in"  data-fragment-index="2">Yes</td>
+							</tr>
+							<tr>
+								<td style="border:0 none;" class="math inline">\(R^2\)</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1">0.542</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="2">0.237</td>
+							</tr>
+							<tr>
+								<td class="math inline">Observations</td>
+								<td  class="fragment fade-in"  data-fragment-index="1">179,695</td>
+								<td  class="fragment fade-in"  data-fragment-index="2">6,550</td>
+
+						</tbody>
+					</table>
+					<ul>
+							<li class="fragment fade-in"  data-fragment-index="3" style="font-size: 80%;"> We find the effect is larger when firm has fewer analyst-MSAs to start with. </li>
+							<li class="fragment fade-in"  data-fragment-index="3" style="font-size: 80%;"> We also find a larger effect when sales are more observable (i.e., retail firms) and when local information
+							is relatively more unique (post Reg FD) </li>
+	</ul>
+</section>
+
+-->
+
+
+
+<!--
+<section>
+	<h1 style="font-size: 125%;"> In what cases will the effect of geographic dispersion be larger? </h1>
+	<p> When sales are more observable </p>
+	<ul>
+		<li> We find a larger effect of hasty generalization in retail firms </li>
+	</ul>
+	<br>
+	<p> When local information is relatively more unique </p>
+	<ul>
+		<li>Agarwal, Chen, and Chadha (2006) find analyst accuracy decreases and dispersion increases post Reg-FD  </li>
+		<ul>
+			<li>We find a larger magnitude post Regulation FD </li>
+		</ul>
+			<li>We find that hasty generalization effect for a firm reduces after satelite data is sold to public (staggered across firms)</li>
+	</ul>
+
+</section>
+-->
+<!--
+<section>
+					<h1 style="font-size: 110%;">Analyst Geographic Dispersion and Consensus Analyst Forecasts - Heterogeneity</h1>
+					<table style="font-size: 80%;">
+						<thead>
+							<tr>
+								<th></th>
+								<th colspan="2">Consensus Abs(Error)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td style="border:0 none;">MSA Herfindahl Index</td>
+								<td style="border:0 none;" >0.0947***</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1" >0.0377***</td>
+							</tr>
+							<tr>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;">(0.0067)</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1">(0.0077)</td>
+							</tr>
+							<tr>
+								<td style="border:0 none;" class="math inline">MSA Herfindahl Index\(\times\)Retail Firm</td>
+								<td style="border:0 none;"> <font color="red">0.0694***</font></td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1"></td>
+							</tr>
+							<tr>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;">(0.0215)</td>
+								<td style="border:0 none;"></td>
+							</tr>
+							<tr>
+								<td style="border:0 none;" class="math inline">MSA Herfindahl Index\(\times\)Post Reg FD</td>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1" > <font color="red">0.0700***</font></td>
+							</tr>
+							<tr>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;"></td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1" >(0.0089)</td>
+							</tr>
+							<tr>
+								<td style="border:0 none;" class="math inline">Controls</td>
+								<td style="border:0 none;" >Yes</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1">Yes</td>
+							</tr>
+							<tr>
+								<td style="border:0 none;" class="math inline">Industry FE</td>
+								<td style="border:0 none;" >Yes</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1">Yes</td>
+							</tr>
+							<tr>
+								<td class="math inline">Quarter FE</td>
+								<td >Yes</td>
+								<td class="fragment fade-in"  data-fragment-index="1">Yes</td>
+							</tr>
+							<tr>
+								<td style="border:0 none;" class="math inline">\(R^2\)</td>
+								<td style="border:0 none;">0.157</td>
+								<td style="border:0 none;" class="fragment fade-in"  data-fragment-index="1">0.157</td>
+							</tr>
+							<tr>
+								<td class="math inline">Observations</td>
+								<td >180,389</td>
+								<td  class="fragment fade-in"  data-fragment-index="1">180,389</td>
+
+						</tbody>
+					</table>
+</section>
+-->
+<section>
+	<h1> Conclusion </h1>
+	<p> Analysts rely on  salient local information, which effects forecasts and firm liquidity </p>
+	<p> Like the ancient parable about wisdom of blind men describing an elephant, diversity of opinion should improve the consensus. </p>
+	<br>
+			<div style="display: flex; justify-content: center;">
+			<img src="img/elephant_bias.jpg" style="height:350px;"   >
+				<img src="img/elephant.jpg" style="height:350px;" class="fragment fade-in"  data-fragment-index="1">
+
+			</div>
+</section>
+
+
+
+
+
+
+
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+<script src="plugin/spreadsheet/ruleJS.all.full.min.js"></script>
+
+<script src="js/presentation.js"></script>
+
+
+<script>
+	// More info about config & dependencies:
+	// - https://github.com/hakimel/reveal.js#configuration
+	// - https://github.com/hakimel/reveal.js#dependencies
+	Reveal.initialize({
+
+		// The "normal" size of the presentation, aspect ratio will be preserved
+		// when the presentation is scaled to fit different resolutions
+		width: 960,
+		height: 700,
+
+		// Factor of the display size that should remain empty around the content
+		margin: 0.04,
+
+		// Bounds for smallest/largest possible scale to apply to content
+		minScale: 0.2,
+		maxScale: 2.0,
+
+		// Display presentation control arrows
+		controls: true,
+
+		// Help the user learn the controls by providing hints, for example by
+		// bouncing the down arrow when they first encounter a vertical slide
+		controlsTutorial: false,
+
+		// Determines where controls appear, "edges" or "bottom-right"
+		controlsLayout: 'bottom-right',
+
+		// Visibility rule for backwards navigation arrows; "faded", "hidden"
+		// or "visible"
+		controlsBackArrows: 'faded',
+
+		// Display a presentation progress bar
+		progress: true,
+
+		// Display the page number of the current slide
+		slideNumber: false,
+
+		// Add the current slide number to the URL hash so that reloading the
+		// page/copying the URL will return you to the same slide
+		hash: true,
+
+		// Slide number formatting can be configured using these variables:
+		//  "h.v": 	horizontal . vertical slide number (default)
+		//  "h/v": 	horizontal / vertical slide number
+		//    "c": 	flattened slide number
+		//  "c/t": 	flattened slide number / total slides
+		//  false:  do not show numbers
+		slideNumber: false,
+
+		// Push each slide change to the browser history. Implies `hash: true`
+		history: false,
+
+		// Enable keyboard shortcuts for navigation
+		keyboard: true,
+
+		// Enable the slide overview mode
+		overview: true,
+
+		// Vertical centering of slides
+		center: true,
+
+		// Enables touch navigation on devices with touch input
+		touch: true,
+
+		// Loop the presentation
+		loop: false,
+
+		// Change the presentation direction to be RTL
+		rtl: false,
+
+		// See https://github.com/hakimel/reveal.js/#navigation-mode
+		navigationMode: 'linear',
+
+		// Randomizes the order of slides each time the presentation loads
+		shuffle: false,
+
+		// Turns fragments on and off globally
+		fragments: true,
+
+		// Flags whether to include the current fragment in the URL,
+		// so that reloading brings you to the same fragment position
+		fragmentInURL: false,
+
+		// Flags if the presentation is running in an embedded mode,
+		// i.e. contained within a limited portion of the screen
+		embedded: false,
+
+		// Flags if we should show a help overlay when the questionmark
+		// key is pressed
+		help: true,
+
+		// Flags if speaker notes should be visible to all viewers
+		showNotes: false,
+
+		// Global override for autoplaying embedded media (video/audio/iframe)
+		// - null: Media will only autoplay if data-autoplay is present
+		// - true: All media will autoplay, regardless of individual setting
+		// - false: No media will autoplay, regardless of individual setting
+		autoPlayMedia: null,
+
+		// Global override for preloading lazy-loaded iframes
+		// - null: Iframes with data-src AND data-preload will be loaded when within
+		//   the viewDistance, iframes with only data-src will be loaded when visible
+		// - true: All iframes with data-src will be loaded when within the viewDistance
+		// - false: All iframes with data-src will be loaded only when visible
+		preloadIframes: null,
+
+		// Number of milliseconds between automatically proceeding to the
+		// next slide, disabled when set to 0, this value can be overwritten
+		// by using a data-autoslide attribute on your slides
+		autoSlide: 0,
+
+		// Stop auto-sliding after user input
+		autoSlideStoppable: true,
+
+		// Use this method for navigation when auto-sliding
+		autoSlideMethod: Reveal.navigateNext,
+
+		// Specify the average time in seconds that you think you will spend
+		// presenting each slide. This is used to show a pacing timer in the
+		// speaker view
+		defaultTiming: 120,
+
+		// Enable slide navigation via mouse wheel
+		mouseWheel: false,
+
+		// Hide cursor if inactive
+		hideInactiveCursor: true,
+
+		// Time before the cursor is hidden (in ms)
+		hideCursorTime: 3000,
+
+		// Hides the address bar on mobile devices
+		hideAddressBar: true,
+
+		// Opens links in an iframe preview overlay
+		// Add `data-preview-link` and `data-preview-link="false"` to customise each link
+		// individually
+		previewLinks: false,
+
+		// Transition style
+		transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+		// Transition speed
+		transitionSpeed: 'default', // default/fast/slow
+
+		// Transition style for full page slide backgrounds
+		backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+
+		// Number of slides away from the current that are visible
+		viewDistance: 3,
+
+		// Parallax background image
+		parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+		// Parallax background size
+		parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
+
+		// Number of pixels to move the parallax background per slide
+		// - Calculated automatically unless specified
+		// - Set to 0 to disable movement along an axis
+		parallaxBackgroundHorizontal: null,
+		parallaxBackgroundVertical: null,
+
+		// The display mode that will be used to show slides
+		display: 'block',
+
+		// Set to false if, when creating a PDF, fragments should be ignored
+		pdfSeparateFragments: false,
+
+		// Apply a 3D roll to links on hover
+		rollingLinks: false,
+
+		menu: {
+			// Specifies which side of the presentation the menu will
+			// be shown. Use 'left' or 'right'.
+			side: 'left',
+
+			// Specifies the width of the menu.
+			// Can be one of the following:
+			// 'normal', 'wide', 'third', 'half', 'full', or
+			// any valid css length value
+			width: 'normal',
+
+			// Add slide numbers to the titles in the slide list.
+			// Use 'true' or format string (same as reveal.js slide numbers)
+			numbers: true,
+
+			// Specifies which slide elements will be used for generating
+			// the slide titles in the menu. The default selects the first
+			// heading element found in the slide, but you can specify any
+			// valid css selector and the text from the first matching
+			// element will be used.
+			// Note: that a section data-menu-title attribute or an element
+			// with a menu-title class will take precedence over this option
+			titleSelector: 'h1, h2, h3, h4, h5, h6',
+
+			// If slides do not have a matching title, attempt to use the
+			// start of the text content as the title instead
+			useTextContentForMissingTitles: false,
+
+			// Hide slides from the menu that do not have a title.
+			// Set to 'true' to only list slides with titles.
+			hideMissingTitles: false,
+
+			// Adds markers to the slide titles to indicate the
+			// progress through the presentation. Set to 'false'
+			// to hide the markers.
+			markers: true,
+
+			// Specify custom panels to be included in the menu, by
+			// providing an array of objects with 'title', 'icon'
+			// properties, and either a 'src' or 'content' property.
+			custom: false,
+
+			// Specifies the themes that will be available in the themes
+			// menu panel. Set to 'true' to show the themes menu panel
+			// with the default themes list. Alternatively, provide an
+			// array to specify the themes to make available in the
+			// themes menu panel, for example...
+			// [
+			//     { name: 'Black', theme: 'css/theme/black.css' },
+			//     { name: 'White', theme: 'css/theme/white.css' },
+			//     { name: 'League', theme: 'css/theme/league.css' }
+			// ]
+			themes: false,
+
+			// Specifies the path to the default theme files. If your
+			// presentation uses a different path to the standard reveal
+			// layout then you need to provide this option, but only
+			// when 'themes' is set to 'true'. If you provide your own
+			// list of themes or 'themes' is set to 'false' the
+			// 'themesPath' option is ignored.
+			themesPath: '../supporting-files/css/theme/',
+
+			// Specifies if the transitions menu panel will be shown.
+			// Set to 'true' to show the transitions menu panel with
+			// the default transitions list. Alternatively, provide an
+			// array to specify the transitions to make available in
+			// the transitions panel, for example...
+			// ['None', 'Fade', 'Slide']
+			transitions: false,
+
+			// Adds a menu button to the slides to open the menu panel.
+			// Set to 'false' to hide the button.
+			openButton: true,
+
+			// If 'true' allows the slide number in the presentation to
+			// open the menu panel. The reveal.js slideNumber option must
+			// be displayed for this to take effect
+			openSlideNumber: false,
+
+			// If true allows the user to open and navigate the menu using
+			// the keyboard. Standard keyboard interaction with reveal
+			// will be disabled while the menu is open.
+			keyboard: true,
+
+			// Normally the menu will close on user actions such as
+			// selecting a menu item, or clicking the presentation area.
+			// If 'true', the sticky option will leave the menu open
+			// until it is explicitly closed, that is, using the close
+			// button or pressing the ESC or m key (when the keyboard
+			// interaction option is enabled).
+			sticky: false,
+
+			// If 'true' standard menu items will be automatically opened
+			// when navigating using the keyboard. Note: this only takes
+			// effect when both the 'keyboard' and 'sticky' options are enabled.
+			autoOpen: true,
+
+			// If 'true' the menu will not be created until it is explicitly
+			// requested by calling RevealMenu.init(). Note this will delay
+			// the creation of all menu panels, including custom panels, and
+			// the menu button.
+			delayInit: false,
+
+			// If 'true' the menu will be shown when the menu is initialised.
+			openOnInit: false,
+
+			// By default the menu will load it's own font-awesome library
+			// icons. If your presentation needs to load a different
+			// font-awesome library the 'loadIcons' option can be set to false
+			// and the menu will not attempt to load the font-awesome library.
+			loadIcons: true
+		},
+
+		math: {
+			mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+			config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+		},
+
+		dependencies: [
+			{ src: 'plugin/markdown/marked.js' },
+			{ src: 'plugin/markdown/markdown.js' },
+			{ src: 'plugin/notes/notes.js', async: true },
+			{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+			{ src: 'plugin/menu/menu.js', async: true },
+			{ src: 'plugin/math/math_custom.js', async: true },
+			{ src: 'plugin/spreadsheet/spreadsheet.js' },
+			{ src: 'plugin/highcharts/highcharts.js' },
+			{ src: 'plugin/zero-index/zero-index-main.js', async: true }
+		]
+	});
+
+
+	// Correctly resize the map (even with refresh)
+	Reveal.addEventListener( 'slidechanged', function( event ) {
+		if(event.currentSlide.hasAttribute("sav-mapbox")) {
+			omap.resize();
+			fmap.resize();
+
+
+		}
+} );
+
+
+
+
+
+
+	var youareherepop = new mapboxgl.Popup({ closeOnClick: false, offset: [0, 0], anchor: 'left' });
+
+
+
+// React to fragment changes
+Reveal.addEventListener( 'fragmentshown', function( event ) {
+	// FOR MAP 1
+		if(event.fragment.hasAttribute('zoom1')) { phase1(); }
+		if(event.fragment.hasAttribute('zoom2')) { phase2(); }
+		if(event.fragment.hasAttribute('zoom3')) { phase3(); }
+		if(event.fragment.hasAttribute('zoom4')) { phase4(); }
+		if(event.fragment.hasAttribute('zoom5')) { phase5(); }
+		if(event.fragment.hasAttribute('zoom6')) { phase6(); }
+		if(event.fragment.hasAttribute('zoom7')) { phase7(); }
+		if(event.fragment.hasAttribute('zoom8')) { phase8(); }
+		if(event.fragment.hasAttribute('zoom9')) { phase9(); }
+		if(event.fragment.hasAttribute('zoom10')) { phase10(); }
+		if(event.fragment.hasAttribute('zoom11')) { phase11(); }
+	if(event.fragment.hasAttribute('zoom12')) { phase12(); }
+} );
+Reveal.addEventListener( 'fragmenthidden', function( event ) {
+		if(event.fragment.hasAttribute('zoom1')) { phase0(); }
+		if(event.fragment.hasAttribute('zoom2')) { phase1(); }
+		if(event.fragment.hasAttribute('zoom3')) { phase2(); }
+		if(event.fragment.hasAttribute('zoom4')) { phase3(); }
+		if(event.fragment.hasAttribute('zoom5')) { phase4(); }
+		if(event.fragment.hasAttribute('zoom6')) { phase5(); }
+		if(event.fragment.hasAttribute('zoom7')) { phase6(); }
+		if(event.fragment.hasAttribute('zoom8')) { phase7(); }
+		if(event.fragment.hasAttribute('zoom9')) { phase8(); }
+		if(event.fragment.hasAttribute('zoom10')) { phase9(); }
+		if(event.fragment.hasAttribute('zoom11')) { phase10(); }
+	if(event.fragment.hasAttribute('zoom12')) { phase11(); }
+
+} );
+
+	var center_coords = [-92.3676175,38.9336091];
+	var starting_zoom = 4;
+	var transition_time = 1200;
+
+
+
+	var savmsa = document.getElementById('sav-msa');
+	savmsa.innerText = 'Atlanta MSA';
+
+	var savyear = document.getElementById('sav-year');
+	savyear.innerText = '2013 Q4';
+
+	var savzillow = document.getElementById('sav-zillow');
+	savzillow.innerText = 'Local Car Counts +26%';
+
+
+
+	// Some settings
+	omap.scrollZoom.disable();
+	omap.dragPan.disable();
+	omap.boxZoom.disable();
+	omap.dragRotate.disable();
+	omap.keyboard.disable();
+	omap.doubleClickZoom.disable();
+	omap.touchZoomRotate.disable();
+
+	// Markers
+
+	// you are here
+	var youarehere = new mapboxgl.Marker({color: 'blue'}).setLngLat([-84.36982,33.8462698]);
+var youarehere2 = new mapboxgl.Marker({color: 'blue'}).setLngLat([-93.265015,44.977753]);
+var youarehere3 = new mapboxgl.Marker({color: 'blue'}).setLngLat([-81.6944,41.4993]);
+var youarehere4 = new mapboxgl.Marker({color: 'blue'}).setLngLat([-82.457176,27.950575]);
+
+	// Popup content
+	var popup1 = new mapboxgl.Popup({ closeOnClick: false, offset: [20, 0], anchor: 'bottom-left' });
+	var popup2 = new mapboxgl.Popup({ closeOnClick: false, offset: 20, anchor: 'top' });
+	var popup3 = new mapboxgl.Popup({ closeOnClick: false, offset: [20, 0], anchor: 'top-left' });
+	var youareherepop = new mapboxgl.Popup({ closeOnClick: false, offset: [20, -10], anchor: 'left' });
+	var youareherepop2 = new mapboxgl.Popup({ closeOnClick: false, offset: [20, -10], anchor: 'left' });
+	var youareherepop3 = new mapboxgl.Popup({ closeOnClick: false, offset: [20, -10], anchor: 'left' });
+	var youareherepop4 = new mapboxgl.Popup({ closeOnClick: false, offset: [20, -10], anchor: 'left' });
+
+
+
+
+
+
+
+	function phase0() {
+		omap.flyTo({
+			center: center_coords,
+			zoom: starting_zoom,
+			duration: transition_time,
+			pitch: 0,
+			bearing: 0
+		});
+	omap.setLayoutProperty('CarCount_2013q3', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2013q4', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q1', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q2', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q3', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q4', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2015q1', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2015q2', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_all', 'visibility','visible');
+		youarehere.remove();
+		youarehere2.remove();
+		youarehere3.remove();
+		youarehere4.remove();
+	}
+
+	function phase1() {
+		omap.flyTo({
+			center:  [-84.3689295,33.8453252],
+			zoom: 7,
+			duration: transition_time,
+			pitch: 50,
+			bearing: 30
+		});
+
+
+		youareherepop.setHTML('<span style="color: black; font-weight: bold;">Keith Hughes <img src="img/hughes.jpg" style="height:40px;"></span>');
+		youarehere.addTo(omap).setPopup(youareherepop).togglePopup();
+
+
+
+				savyear.innerText = '';
+		savzillow.innerText = '';
+	omap.setLayoutProperty('CarCount_2013q3', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2013q4', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q1', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q2', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q3', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q4', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2015q1', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2015q2', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_all', 'visibility','visible');
+	}
+
+	function phase2() {
+		omap.flyTo({
+			center: [-84.3689295,33.8453252],
+			zoom: 10,
+			duration: transition_time,
+			pitch: 50,
+			bearing: 30
+		});
+
+	omap.setLayoutProperty('CarCount_2013q4', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q1', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q2', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q3', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q4', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2015q1', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2015q2', 'visibility', 'none');
+			omap.setLayoutProperty('CarCount_all', 'visibility', 'none');
+			omap.setLayoutProperty('CarCount_2013q3', 'visibility', 'visible');
+
+					savyear.innerText = '2013 Q4';
+					savzillow.innerText = 'Local Car Counts +26%';
+
+
+
+	}
+
+
+
+	function phase3() {
+		omap.flyTo({
+			center: [-84.3689295,33.8453252],
+			zoom: 10,
+			duration: transition_time,
+			pitch: 50,
+			bearing: 30
+		});
+
+
+	omap.setLayoutProperty('CarCount_2014q1', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q2', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q3', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q4', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2015q1', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2015q2', 'visibility', 'none');
+		omap.setLayoutProperty('CarCount_2013q3', 'visibility', 'none');
+		omap.setLayoutProperty('CarCount_2013q4', 'visibility', 'visible');
+
+
+					savyear.innerText = '2014 Q1';
+					savzillow.innerText = 'Local Car Counts +49%';
+
+
+	}
+
+	function phase4() {
+		omap.flyTo({
+			center: [-84.3689295,33.8453252],
+			zoom: 10,
+			duration: 0,
+			pitch: 50,
+			bearing: 30
+		});
+		omap.setLayoutProperty('CarCount_2013q4', 'visibility', 'none');
+		omap.setLayoutProperty('CarCount_2014q1', 'visibility', 'visible');
+
+
+	omap.setLayoutProperty('CarCount_2013q3', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2013q4', 'visibility', 'none');
+
+	omap.setLayoutProperty('CarCount_2014q2', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q3', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q4', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2015q1', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2015q2', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_all', 'visibility','none');
+
+
+		savyear.innerText = '2014 Q2';
+		savzillow.innerText = 'Local Car Counts +80%';
+
+	}
+
+	function phase5() {
+		omap.flyTo({
+			center: [-84.3689295,33.8453252],
+			zoom: 10,
+			duration: 0,
+			pitch: 50,
+			bearing: 30
+		});
+			omap.setLayoutProperty('CarCount_2014q1', 'visibility', 'none');
+				omap.setLayoutProperty('CarCount_2014q2', 'visibility', 'visible');
+
+	omap.setLayoutProperty('CarCount_2013q3', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2013q4', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q1', 'visibility', 'none');
+
+	omap.setLayoutProperty('CarCount_2014q3', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q4', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2015q1', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2015q2', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_all', 'visibility','none');
+
+
+
+		savyear.innerText = '2014 Q3';
+		savzillow.innerText = 'Local Car Counts +41%';
+
+	}
+
+	function phase6() {
+		omap.flyTo({
+			center: [-84.3689295,33.8453252],
+			zoom: 10,
+			duration: 0,
+			pitch: 50,
+			bearing: 30
+		});
+
+					omap.setLayoutProperty('CarCount_2014q2', 'visibility', 'none');
+						omap.setLayoutProperty('CarCount_2014q3', 'visibility', 'visible');
+
+	omap.setLayoutProperty('CarCount_2013q3', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2013q4', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q1', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q2', 'visibility', 'none');
+
+	omap.setLayoutProperty('CarCount_2014q4', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2015q1', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2015q2', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_all', 'visibility','none');
+
+
+
+		savyear.innerText = '2014 Q4';
+		savzillow.innerText = 'Local Car Counts +57%';
+
+	}
+
+	function phase7() {
+		omap.flyTo({
+			center: [-84.3689295,33.8453252],
+			zoom: 10,
+			duration: 0,
+			pitch: 50,
+			bearing: 30
+		});
+
+
+					omap.setLayoutProperty('CarCount_2014q3', 'visibility', 'none');
+						omap.setLayoutProperty('CarCount_2014q4', 'visibility', 'visible');
+
+	omap.setLayoutProperty('CarCount_2013q3', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2013q4', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q1', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q2', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q3', 'visibility', 'none');
+
+	omap.setLayoutProperty('CarCount_2015q1', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2015q2', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_all', 'visibility','none');
+
+
+
+		savyear.innerText = '2015 Q1';
+		savzillow.innerText = 'Local Car Counts +35%';
+
+	}
+
+	function phase8() {
+		omap.flyTo({
+			center: [-84.3689295,33.8453252],
+			zoom: 10,
+			duration: 0,
+			pitch: 50,
+			bearing: 30
+		});
+			omap.setLayoutProperty('CarCount_2014q4', 'visibility', 'none');
+						omap.setLayoutProperty('CarCount_2015q1', 'visibility', 'visible');
+
+
+	omap.setLayoutProperty('CarCount_2013q3', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2013q4', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q1', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q2', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q3', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q4', 'visibility', 'none');
+
+	omap.setLayoutProperty('CarCount_2015q2', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_all', 'visibility','none');
+
+
+		savyear.innerText = '2015 Q2';
+		savzillow.innerText = 'Local Car Counts +52%';
+
+	}
+
+	function phase9() {
+			omap.flyTo({
+					center: [-93.265015,44.977753],
+					zoom: 9,
+					duration: 2500,
+					pitch: 50,
+					bearing: 30
+				});
+
+
+			omap.setLayoutProperty('CarCount_2013q3', 'visibility', 'none');
+			omap.setLayoutProperty('CarCount_2013q4', 'visibility', 'none');
+			omap.setLayoutProperty('CarCount_2014q1', 'visibility', 'none');
+			omap.setLayoutProperty('CarCount_2014q2', 'visibility', 'none');
+			omap.setLayoutProperty('CarCount_2014q3', 'visibility', 'none');
+			omap.setLayoutProperty('CarCount_2014q4', 'visibility', 'none');
+			omap.setLayoutProperty('CarCount_2015q1', 'visibility', 'none');
+			omap.setLayoutProperty('CarCount_2015q2', 'visibility', 'none');
+			omap.setLayoutProperty('CarCount_all', 'visibility','visible');
+	youarehere.remove();
+youarehere3.remove();
+youarehere4.remove();
+
+		 	savmsa.innerText = 'Minneapolis MSA';
+		 					savyear.innerText = '2015 Q2';
+		savzillow.innerText = 'Local Car Counts -1%';
+	youareherepop2.setHTML('<span style="color: black; font-weight: bold;">Peter Keith <img src="img/peter_keith.jpg" style="height:40px;"></span>');
+		youarehere2.addTo(omap).setPopup(youareherepop2).togglePopup();
+
+
+	}
+
+	function phase10() {
+		omap.flyTo({
+			center: [-81.8459438,41.497447],
+			zoom: 9,
+			duration: 2500,
+			pitch: 50,
+			bearing: 30
+		});
+
+
+	omap.setLayoutProperty('CarCount_2013q3', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2013q4', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q1', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q2', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q3', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q4', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2015q1', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2015q2', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_all', 'visibility','visible');
+
+		youarehere.remove();
+		youarehere2.remove();
+youarehere4.remove();
+
+ 	savmsa.innerText = 'Cleveland MSA';
+ 					savyear.innerText = '2015 Q2';
+
+			savzillow.innerText = 'Local Car Counts +17%';
+
+
+				youareherepop3.setHTML('<span style="color: black; font-weight: bold;">Eric Bosshard <img src="img/eric_bosshard.jpg" style="height:40px;"></span>');
+		youarehere3.addTo(omap).setPopup(youareherepop3).togglePopup();
+
+	}
+
+	function phase11() {
+		omap.flyTo({
+			center: [-82.457176,27.950575],
+			zoom: 9,
+			duration: 2500,
+			pitch: 50,
+			bearing: 30
+		});
+
+	omap.setLayoutProperty('CarCount_2013q3', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2013q4', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q1', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q2', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q3', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2014q4', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2015q1', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_2015q2', 'visibility', 'none');
+	omap.setLayoutProperty('CarCount_all', 'visibility','visible');
+ 	savmsa.innerText = 'Tampa MSA';
+ 					savyear.innerText = '2015 Q2';
+			savzillow.innerText = 'Local Car Counts +20%';
+
+		youarehere.remove();
+		youarehere2.remove();
+youarehere3.remove();
+
+
+				youareherepop4.setHTML('<span style="color: black; font-weight: bold;">Budd Bugatch<img src="img/budd_bugatch.jpg" style="height:40px;"></span>');
+		youarehere4.addTo(omap).setPopup(youareherepop4).togglePopup();
+
+
+	}
+
+	function phase12() {
+		omap.flyTo({
+			center: [-84.3689295,33.8453252],
+			zoom: 3,
+			duration: 2500,
+			pitch: 0,
+			bearing: 0
+		});
+
+
+		youarehere.remove();
+		youarehere2.remove();
+youarehere3.remove();
+youarehere4.remove();
+
+ 	savmsa.remove();
+savyear.remove();
+savzillow.remove();
+
+	}
+
+
+
+
+</script>
+
+</body>
+</html>
